@@ -85,8 +85,16 @@ function connect() {
         return;
     }
     
+    // Obtener la URL base del servidor (usa la IP/hostname actual)
+    const protocol = window.location.protocol === 'https:' ? 'https:' : 'http:';
+    const host = window.location.hostname;
+    const port = window.location.port || '8080';
+    const serverUrl = `${protocol}//${host}:${port}/ws-chat`;
+    
+    console.log('Conectando a:', serverUrl);
+    
     // Crear conexión SockJS
-    const socket = new SockJS('/ws-chat');
+    const socket = new SockJS(serverUrl);
     stompClient = Stomp.over(socket);
     
     // Configurar reconexión automática
