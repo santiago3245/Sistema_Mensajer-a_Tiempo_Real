@@ -1,0 +1,134 @@
+# ============================================
+# ARCHIVOS DE COMPILACIÓN Y BUILD (Maven)
+# ============================================
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# ============================================
+# ARCHIVOS BINARIOS COMPILADOS
+# ============================================
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+
+# ============================================
+# LOGS Y ARCHIVOS TEMPORALES
+# ============================================
+*.log
+logs/
+spring.log
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# ============================================
+# CONFIGURACIÓN DE IDEs
+# ============================================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# Otros editores
+*.swp
+*.swo
+*~
+
+# ============================================
+# ARCHIVOS DEL SISTEMA OPERATIVO
+# ============================================
+# Windows
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.directory
+
+# ============================================
+# NODE_MODULES (si existiera)
+# ============================================
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# ============================================
+# CONFIGURACIONES LOCALES Y SENSIBLES
+# ============================================
+application-local.properties
+application-dev.properties
+*.env
+.env.local
+.env.*.local
+
+# ============================================
+# BASES DE DATOS LOCALES
+# ============================================
+*.db
+*.sqlite
+*.h2.db
+
+# ============================================
+# COBERTURA Y REPORTES DE PRUEBAS
+# ============================================
+coverage/
+.nyc_output/
+test-output/
+*.tlog
+
+# ============================================
+# ARCHIVOS GENERADOS (NO INCLUIR)
+# ============================================
+# Documentación compilada
+*.pdf
+*.docx
+
+# Build directories
+build/
+dist/
+out/
+
+# ============================================
+# MANTENER ESTRUCTURA DE DIRECTORIOS VACÍOS
+# ============================================
+!.gitkeep
+
+# ============================================
+# ARCHIVOS ESPECÍFICOS A IGNORAR
+# ============================================
+# Scripts temporales o de prueba
+*.sh.bak
+*.bat.bak
+test-*.sh
+test-*.bat
+
+# Archivos de respaldo del editor
+*.orig
+*.rej

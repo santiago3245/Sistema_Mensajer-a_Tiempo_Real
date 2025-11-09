@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Mensajería en Tiempo Real</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Pantalla de inicio de sesión -->
+        <div id="username-page" class="page">
+            <div class="username-page-container">
+                <h1 class="title">
+                    <i class="fas fa-comments"></i>
+                    Sistema de Mensajería
+                </h1>
+                <p class="subtitle">Chat en Tiempo Real con WebSocket</p>
+                <form id="usernameForm" name="usernameForm">
+                    <div class="form-group">
+                        <input type="text" 
+                               id="name" 
+                               placeholder="Ingresa tu nombre de usuario" 
+                               autocomplete="off" 
+                               class="form-control"
+                               minlength="2"
+                               maxlength="50"
+                               required />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="accent username-submit">
+                            Iniciar Chat <i class="fas fa-sign-in-alt"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Pantalla de chat -->
+        <div id="chat-page" class="page hidden">
+            <div class="chat-container">
+                <!-- Header del chat -->
+                <div class="chat-header">
+                    <div class="chat-header-left">
+                        <i class="fas fa-comments"></i>
+                        <h2>Chat en Tiempo Real</h2>
+                    </div>
+                    <div class="chat-header-right">
+                        <span class="connected-user-label">Usuario:</span>
+                        <span id="connected-user-name" class="connected-user-name"></span>
+                        <span class="separator">|</span>
+                        <span class="users-count-label">En línea:</span>
+                        <span id="users-count" class="users-count">0</span>
+                        <button id="clear-chat-btn" class="clear-chat-btn" title="Limpiar chat">
+                            <i class="fas fa-eraser"></i> Limpiar
+                        </button>
+                        <button id="logout-btn" class="logout-btn" title="Cerrar sesión">
+                            <i class="fas fa-sign-out-alt"></i> Salir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Área de mensajes -->
+                <ul id="messageArea" class="message-area"></ul>
+
+                <!-- Indicador de escritura -->
+                <div id="typing-indicator" class="typing-indicator hidden">
+                    <span class="typing-text"></span>
+                </div>
+
+                <!-- Formulario de envío de mensajes -->
+                <form id="messageForm" name="messageForm" class="message-form">
+                    <div class="form-group">
+                        <input type="text" 
+                               id="message" 
+                               placeholder="Escribe tu mensaje..." 
+                               autocomplete="off" 
+                               class="form-control"
+                               maxlength="500" />
+                        <button type="submit" class="send-button" title="Enviar mensaje">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificación Toast -->
+    <div id="toast" class="toast hidden">
+        <div class="toast-content">
+            <i class="toast-icon"></i>
+            <span class="toast-message"></span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.6.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
